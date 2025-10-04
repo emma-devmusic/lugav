@@ -2,14 +2,39 @@
 
 ## Project Overview
 
-This is a Bootstrap-based Spanish audiovisual portfolio website for LUGAV, featuring a multi-page photography/videography showcase. It's built from a customized template with specific branding and content modifications.
+This is a Bootstrap-based Spanish audiovisual portfolio website for LUGAV, featuring a multi-page photography/videography showcase. It's built from a customized template with **component-based architecture** using Fetch API for reusable HTML components.
 
 ## Core Architecture & File Structure
 
+### Component System (NEW)
+```
+components/
+├── preloader.html  # SVG loading animation with rotating facts
+├── header.html     # Navigation bar (auto-configures per page)
+└── footer.html     # Contact information footer
+```
+
+**Usage Pattern**:
+```html
+<!-- In any page -->
+<body>
+    <div data-component="preloader"></div>
+    <div data-component="header"></div>
+    <!-- Page content -->
+    <div data-component="footer"></div>
+</body>
+```
+
+**JavaScript Loading**: `components-loader.js` MUST load before jQuery:
+```html
+<script src="js/components-loader.js"></script>
+<script src="js/jquery/jquery-2.2.4.min.js"></script>
+```
+
 ### HTML Structure Pattern
-- **Consistent Header**: All pages share identical header structure with navigation (`index.html`, `about-me.html`, `portfolio.html`, `contact.html`)
+- **Component Placeholders**: Use `<div data-component="name"></div>` for shared elements
+- **Auto-Configuration**: Header automatically marks active page and adds background (except index.html)
 - **Spanish Language**: Content is in Spanish with specific terminology ("Inicio", "Sobre Mi", "Portafolio", "Contacto")
-- **Preloader System**: Every page includes the same SVG preloader with rotating facts about photography/video
 - **Bootstrap Classes**: Heavy use of Bootstrap 4 grid system and components
 
 ### CSS Architecture
@@ -28,15 +53,27 @@ css/
 
 ### JavaScript Dependencies & Loading Order
 ```javascript
-// Required loading sequence (see all HTML files):
-1. jquery-2.2.4.min.js   # jQuery 2.x (legacy version)
-2. popper.min.js         # Bootstrap dependency
-3. bootstrap.min.js      # Bootstrap JS
-4. plugins.js            # Third-party plugins (Owl Carousel, Waypoints, etc.)
-5. active.js            # Custom site functionality
+// UPDATED loading sequence:
+1. components-loader.js  # Component system - MUST BE FIRST
+2. jquery-2.2.4.min.js   # jQuery 2.x (legacy version)
+3. popper.min.js         # Bootstrap dependency
+4. bootstrap.min.js      # Bootstrap JS
+5. plugins.js            # Third-party plugins (Owl Carousel, Waypoints, etc.)
+6. active.js            # Custom site functionality
 ```
 
 ## Key Development Patterns
+
+### Component Development
+**Creating New Components**:
+1. Add HTML file to `components/` directory
+2. Register in `js/components-loader.js` COMPONENTS object
+3. Use `<div data-component="name"></div>` placeholder in pages
+
+**Component Features**:
+- **Dynamic Header**: Detects current page, adds `.active` class to nav-item
+- **Background Management**: Automatically adds header background to all pages except index
+- **Event System**: Fires `componentsLoaded` event when all components are ready
 
 ### Image Asset Organization
 ```
@@ -64,14 +101,6 @@ $('#welcomeSlider').carousel({
 
 **Important**: Carousel uses both `data-slide-to` attributes AND background-image styles on indicators.
 
-### Preloader Facts System
-```javascript
-// Rotating facts display (5-second intervals)
-setInterval(function () {
-    // Rotates through <li> items in .questions-area > ul
-}, 5000);
-```
-
 ## Styling Conventions
 
 ### Brand Colors & Typography
@@ -91,8 +120,9 @@ setInterval(function () {
 ### File Modification Guidelines
 1. **NEVER edit**: `css/core-style.css`, `css/bootstrap.min.css`, or any `.min.js` files
 2. **Custom CSS**: Add only to root `style.css` file
-3. **Images**: Follow numeric naming for bg-img (14.jpg, 15.jpg, etc.)
-4. **JavaScript**: Extend functionality in `js/active.js` or create separate custom files
+3. **Components**: Edit `components/*.html` files, NOT individual pages
+4. **Images**: Follow numeric naming for bg-img (14.jpg, 15.jpg, etc.)
+5. **JavaScript**: Extend functionality in `js/active.js` or create separate custom files
 
 ### Content Localization
 - All user-facing text is in Spanish
@@ -120,21 +150,41 @@ setInterval(function () {
 
 ## Common Tasks
 
+### Adding New Pages
+1. Create HTML file with component placeholders
+2. Include `components-loader.js` before jQuery
+3. Add data-page attribute to header component for nav highlighting
+
+### Modifying Shared Elements
+- **Header/Footer**: Edit `components/header.html` or `components/footer.html`
+- Changes apply to ALL pages automatically
+- No need to update multiple HTML files
+
 ### Adding New Portfolio Items
 1. Add image to `img/bg-img/` with descriptive name
 2. Create gallery item HTML with appropriate category class
 3. Ensure hover overlay and magnific popup structure
-
-### Modifying Navigation
-- Update all 4 HTML files simultaneously (header section)
-- Maintain Bootstrap navbar structure and Spanish labels
 
 ### Customizing Styles
 - Add overrides to root `style.css`
 - Use specific selectors to override core styles
 - Test responsiveness across breakpoints
 
+### Development Server
+**IMPORTANT**: Component system requires HTTP server (not `file://` protocol)
+```bash
+# Option 1: Python
+python -m http.server 8000
+
+# Option 2: PHP
+php -S localhost:8000
+
+# Option 3: Node.js
+npx http-server
+```
+
 ### Performance Optimization
 - Optimize images before adding to `img/bg-img/`
 - Consider lazy loading for large portfolios
 - Minify custom CSS/JS for production
+- Components are cached by browser after first load

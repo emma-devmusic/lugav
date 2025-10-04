@@ -24,73 +24,11 @@
 </head>
 
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="showbox">
-            <div class="loader">
-                <svg class="circular" viewBox="25 25 50 50">
-                    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
-                </svg>
-            </div>
-        </div>
-        <div class="questions-area text-center">
-            <p>¿Lo sabías?</p>
-            <ul>
-                <li>El video nació con el cinematógrafo en 1895 (Lumière).</li>
-                <li>La fotografía es la profesión más dura del mundo.</li>
-                <li>El álbum de fotografías más grande del mundo en cuanto a dimensiones medía 13 pies 11,5 pulgadas x 17 pies.</li>
-                <li>El mosaico fotográfico más grande del mundo incluyó 176.175 imágenes.</li>
-                <li>La lente de cámara más grande del mundo era una lente de 5200 mm acoplada a un canon.</li>
-            </ul>
-        </div>
-    </div>
+    <!-- Preloader Component -->
+    <div data-component="preloader"></div>
 
-    <!-- Gradient Background Overlay -->
-    <div class="gradient-background-overlay"></div>
-
-    <!-- Header Area Start -->
-    <header class="header-area bg-img" style="background-image: url(img/bg-img/14.jpg);">
-        <div class="container-fluid h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12 h-100">
-                    <div class="main-menu h-100">
-                        <nav class="navbar h-100 navbar-expand-lg">
-                            <!-- Logo Area  -->
-                            <a class="navbar-brand" href="index.html"><img src="img/core-img/logo.png" alt="Logo"
-                                    style="max-width: 100px;"></a>
-
-                            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                data-target="#studioMenu" aria-controls="studioMenu" aria-expanded="false"
-                                aria-label="Toggle navigation"><i class="fa fa-bars"></i> Menu</button>
-
-                            <div class="collapse navbar-collapse" id="studioMenu">
-                                <!-- Menu Area Start  -->
-                                <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="index.html">Inicio <span
-                                                class="sr-only">(current)</span></a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="about-me.html">Sobre Mi</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="portfolio.html">Portafolio</a>
-                                    </li>
-                                    <!-- <li class="nav-item">
-                                        <a class="nav-link" href="blog.html">Blog</a>
-                                    </li> -->
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="contact.html">Contacto</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Header Area End -->
+    <!-- Header Component -->
+    <div data-component="header"></div>
 
     <!-- Social Sidebar Area Start -->
     <!-- <div class="social-sidebar-area"> -->
@@ -247,6 +185,9 @@
     <!-- <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p> -->
     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
+    <!-- Components Loader (MUST load FIRST) -->
+    <script src="js/components-loader.js"></script>
+    
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
