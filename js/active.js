@@ -2,26 +2,78 @@
     'use strict';
 
     var $window = $(window);
+    var preloaderHidden = false;
 
-    // Preloader Active Code
-    $window.on('load', function () {
-        $('#preloader').fadeOut('slow', function () {
-            $(this).remove();
-        });
+    // Función para ocultar el preloader de manera segura
+    function hidePreloader() {
+        if (preloaderHidden) return; // Evitar múltiples ejecuciones
+        
+        preloaderHidden = true;
+        var $preloader = $('#preloader');
+        
+        if ($preloader.length) {
+            $preloader.fadeOut('slow', function () {
+                $(this).remove();
+            });
+        }
+    }
+
+    // Preloader Active Code - múltiples triggers
+    $window.on('load', function() {
+        hidePreloader();
+    });
+    
+    // Fallback 1: Si los componentes están listos
+    document.addEventListener('componentsLoaded', function() {
+        setTimeout(hidePreloader, 500);
+    });
+    
+    // Fallback 2: Timeout de seguridad absoluto
+    setTimeout(function() {
+        if (!preloaderHidden) {
+            hidePreloader();
+            // Si aún así falla, usar método más agresivo
+            setTimeout(function() {
+                if (document.getElementById('preloader')) {
+                    window.forceHidePreloader();
+                }
+            }, 1000);
+        }
+    }, 8000);
+    
+    // Fallback 3: DOMContentLoaded + delay
+    $(document).ready(function() {
+        setTimeout(function() {
+            if (!preloaderHidden && document.readyState === 'complete') {
+                hidePreloader();
+            }
+        }, 2000);
     });
 
-    var $listCollection = $(".questions-area > ul > li");
-    var $firstItem = $listCollection.first();
-    $listCollection.first().addClass("question-show");
-    setInterval(function () {
-        var $activeItem = $(".question-show")
-        $activeItem.removeClass("question-show");
-        var $nextItem = $activeItem.closest('li').next();
-        if ($nextItem.length == 0) {
-            $nextItem = $firstItem;
+    // Questions area - solo inicializar después de que componentes estén listos
+    document.addEventListener('componentsLoaded', function() {
+        var $listCollection = $(".questions-area > ul > li");
+        var $firstItem = $listCollection.first();
+        
+        // Solo iniciar rotación si hay más de un elemento visible
+        var visibleItems = $listCollection.filter('.question-show');
+        if (visibleItems.length === 0 && $listCollection.length > 0) {
+            // Fallback: mostrar el primero si ninguno está visible
+            $firstItem.addClass("question-show");
         }
-        $nextItem.addClass("question-show");
-    }, 5000);
+        
+        // No iniciar rotación automática ya que ahora mostramos solo uno aleatorio
+        // Mantener solo el seleccionado por configureRandomFact()
+    });
+
+    // ÚLTIMO RECURSO: Check inmediato si ya todo está cargado
+    setTimeout(function() {
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            if (document.getElementById('preloader') && !preloaderHidden) {
+                hidePreloader();
+            }
+        }
+    }, 100);
 
     // Fullscreen Active Code
     $window.on('resizeEnd', function () {

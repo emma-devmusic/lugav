@@ -110,6 +110,11 @@
 
         // Evento para que otros scripts sepan que los componentes están listos
         document.dispatchEvent(new CustomEvent('componentsLoaded'));
+
+        // Forzar ocultación de preloader después de un breve delay
+        setTimeout(() => {
+            forceHideAllPreloaders();
+        }, 2000);
     }
 
     /**
@@ -159,6 +164,41 @@
         document.addEventListener('DOMContentLoaded', initComponents);
     } else {
         initComponents();
+    }
+
+    // Método global de emergencia para ocultar preloader
+    window.forceHidePreloader = function() {
+        forceHideAllPreloaders();
+    };
+
+    // Función interna más agresiva
+    function forceHideAllPreloaders() {        
+        // Ocultar preloader principal
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            preloader.style.transition = 'opacity 0.3s ease';
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+                preloader.remove();
+            }, 300);
+        }
+        
+        // Ocultar preloader inicial
+        const initialPreloader = document.getElementById('initial-preloader');
+        if (initialPreloader) {
+            initialPreloader.style.display = 'none';
+            initialPreloader.remove();
+        }
+        
+        // Asegurar visibilidad del body
+        document.body.classList.add('components-loaded');
+        document.body.style.visibility = 'visible';
+        document.body.style.opacity = '1';
+        
+        // Remover cualquier overlay restante
+        const overlays = document.querySelectorAll('.gradient-background-overlay');
+        overlays.forEach(overlay => overlay.remove());
     }
 
 })();
