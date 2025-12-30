@@ -237,14 +237,14 @@
     }
     .gallery_area {
         height: auto;
-        width: calc(100% - 90px);
+        /* width: calc(100% - 90px); */
+        width: 95%;
+        margin-inline: auto;
         overflow-y: auto;
         position: relative;
         z-index: 1;
         top: 100px;
-        left: 60px;
-        right: 15px;
-        padding-right: 15px;
+        padding-bottom: 6rem;
     }
     .portfolio-menu button {
         font-size: 12px;

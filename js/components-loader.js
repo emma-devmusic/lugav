@@ -12,7 +12,8 @@
     const COMPONENTS = {
         preloader: 'preloader.html',
         header: 'header.html',
-        footer: 'footer.html'
+        footer: 'footer.html',
+        'instagram-section': 'instagram-section.html'
     };
 
     /**
@@ -101,8 +102,56 @@
         // Configurar header
         configureHeader();
 
+        // Configurar preloader con fact aleatorio
+        configureRandomFact();
+
+        // Ocultar preloader inicial y mostrar contenido
+        hideInitialPreloader();
+
         // Evento para que otros scripts sepan que los componentes están listos
         document.dispatchEvent(new CustomEvent('componentsLoaded'));
+    }
+
+    /**
+     * Configura el preloader para mostrar solo un fact aleatorio
+     */
+    function configureRandomFact() {
+        const questionsList = document.querySelector('.questions-area ul');
+        if (!questionsList) return;
+
+        const facts = questionsList.querySelectorAll('li');
+        if (facts.length === 0) return;
+
+        // Seleccionar un índice aleatorio
+        const randomIndex = Math.floor(Math.random() * facts.length);
+
+        // Ocultar todos los facts
+        facts.forEach((fact, index) => {
+            fact.classList.remove('question-show');
+            if (index === randomIndex) {
+                // Mostrar solo el fact aleatorio seleccionado
+                fact.classList.add('question-show');
+            }
+        });
+    }
+
+    /**
+     * Oculta el preloader inicial y muestra el contenido
+     */
+    function hideInitialPreloader() {
+        const initialPreloader = document.getElementById('initial-preloader');
+        if (initialPreloader) {
+            // Hacer visible el body
+            document.body.classList.add('components-loaded');
+            
+            // Quitar el preloader inicial después de un breve delay
+            setTimeout(() => {
+                initialPreloader.style.display = 'none';
+            }, 300);
+        } else {
+            // Fallback: solo hacer visible el body
+            document.body.classList.add('components-loaded');
+        }
     }
 
     // Iniciar cuando el DOM esté listo

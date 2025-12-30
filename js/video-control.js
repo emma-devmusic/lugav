@@ -103,6 +103,15 @@
     if (!videoExpanded) {
       $activeContainer = $container;
 
+      // Bloquear scroll del body
+      $('body').addClass('mfp-no-scroll');
+
+      // Crear overlay de fondo si no existe
+      if ($('#video-overlay').length === 0) {
+        $('body').append('<div id="video-overlay" class="video-overlay"></div>');
+      }
+      $('#video-overlay').show();
+
       $container.css({
         overflow: "visible",
         position: "fixed",
@@ -116,6 +125,7 @@
         width: "90vw",
         "max-width": "900px",
         height: "auto",
+        "box-shadow": "0 10px 30px rgba(0,0,0,0.5)"
       });
 
       $container.find(".video-iframe").css({
@@ -138,6 +148,12 @@
       // Detener el video
       var iframeSrc = $iframe.attr("src");
       $iframe.attr("src", iframeSrc);
+
+      // Restaurar scroll del body
+      $('body').removeClass('mfp-no-scroll');
+
+      // Ocultar overlay
+      $('#video-overlay').hide();
 
       // Restaurar estilos
       $activeContainer.attr(
@@ -188,13 +204,20 @@
     }
   });
 
-  // Cerrar al hacer click fuera
+  // Cerrar al hacer click fuera o en el overlay
   $(document).on("click", function (e) {
     if (
       videoExpanded &&
       !$(e.target).closest(".video-container").length &&
       !$(e.target).closest(".video-wrapper").length
     ) {
+      collapseVideo();
+    }
+  });
+
+  // Cerrar al hacer click en el overlay específicamente
+  $(document).on("click", "#video-overlay", function() {
+    if (videoExpanded) {
       collapseVideo();
     }
   });

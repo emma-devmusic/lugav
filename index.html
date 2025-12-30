@@ -13,6 +13,9 @@
 
     <!-- Favicon  -->
     <link rel="icon" href="img/core-img/favicon.ico">
+    
+    <!-- Preloader Critical CSS -->
+    <link rel="stylesheet" href="css/preloader-critical.css">
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="css/core-style.css">
@@ -24,6 +27,14 @@
 </head>
 
 <body>
+    <!-- Initial Preloader (shown immediately) -->
+    <div id="initial-preloader">
+        <div class="initial-loader">
+            <div class="spinner"></div>
+            <p style="color: #666; margin: 0;">Cargando...</p>
+        </div>
+    </div>
+
     <!-- Preloader Component -->
     <div data-component="preloader"></div>
 
