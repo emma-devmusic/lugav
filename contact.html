@@ -1,249 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
     <title>LUGAV - Audiovisual | Contacto</title>
 
     <!-- Favicon  -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="img/core-img/favicon.ico" />
+
+    <!-- Preloader Critical CSS -->
+    <link rel="stylesheet" href="css/preloader-critical.css" />
 
     <!-- Core Style CSS -->
-    <link rel="stylesheet" href="css/core-style.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/core-style.css" />
+    <link rel="stylesheet" href="style.css" />
 
     <!-- Responsive CSS -->
-    <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet" />
+  </head>
 
-</head>
-
-<body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="showbox">
-            <div class="loader">
-                <svg class="circular" viewBox="25 25 50 50">
-                    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
-                </svg>
-            </div>
-        </div>
-        <div class="questions-area text-center">
-            <p>Did you know?</p>
-            <ul>
-                <li>The largest photography competition is 353,768 entries.</li>
-                <li>Photography is the toughest profession in the world.</li>
-                <li>The world’s largest photo album by dimensions was 13 ft 11.5 in x 17 ft.</li>
-                <li>The world’s largest photo mosaic featured 176,175 pictures.</li>
-                <li>The world’s largest camera lens was a 5200mm lens attached to a canon.</li>
-            </ul>
-        </div>
+  <body>
+    <!-- Initial Preloader (shown immediately) -->
+    <div id="initial-preloader">
+      <div class="initial-loader">
+        <div class="spinner"></div>
+        <p style="color: #666; margin: 0">Cargando...</p>
+      </div>
     </div>
 
-    <!-- Gradient Background Overlay -->
-    <div class="gradient-background-overlay"></div>
+    <!-- Preloader Component -->
+    <div data-component="preloader"></div>
 
-    <!-- Header Area Start -->
-    <header class="header-area bg-img" style="background-image: url(img/bg-img/14.jpg);">
-        <div class="container-fluid h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12 h-100">
-                    <div class="main-menu h-100">
-                        <nav class="navbar h-100 navbar-expand-lg">
-                            <!-- Logo Area  -->
-                            <a class="navbar-brand" href="index.html"><img src="img/core-img/logo.png" alt="Logo"
-                                    style="max-width: 100px;"></a>
-
-                            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                data-target="#studioMenu" aria-controls="studioMenu" aria-expanded="false"
-                                aria-label="Toggle navigation"><i class="fa fa-bars"></i> Menu</button>
-
-                            <div class="collapse navbar-collapse" id="studioMenu">
-                                <!-- Menu Area Start  -->
-                                <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="index.html">Inicio <span
-                                                class="sr-only">(current)</span></a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="about-me.html">Sobre Mi</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="portfolio.html">Portafolio</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="contact.html">Contacto</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Header Area End -->
+    <!-- Header Component -->
+    <div data-component="header"></div>
 
     <section class="contact-area section_padding_100 mt-100">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-10">
-                    <div class="contact-heading-text text-center mb-100">
-                        <span></span>
-                        <h2>¡Hablemos!</h2>
-                        <p>Estamos acá para dar vida a tus ideas. Ya sea un evento, un videoclip, una sesión de foto
-                            producto o un diseño gráfico, en <strong>LUGAV</strong> trabajamos para transformar tus
-                            proyectos en algo único. Contactanos y contanos qué necesitás; estamos listos para brindarte
-                            soluciones multimediales adaptadas a tus expectativas. Podés escribirnos por mail,
-                            instagram o llamarnos. Juntos lograremos resultados increíbles y
-                            que superen tus expectativas. ¡Hablemos!</p>
-                    </div>
-                </div>
-                <!-- Contact Form Area -->
-                <!-- <div class="col-10">
-                    <div class="contact-form-area">
-                        <form action="#" method="post">
-                            <div class="row">
-                                <div class="col-12 col-md-4">
-                                    <input type="text" class="form-control" name="name" id="name"
-                                        placeholder="Tu Nombre">
-                                </div>
-                                <div class="col-12 col-md-4">
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Tu Correo">
-                                </div>
-                                <div class="col-12 col-md-4">
-                                    <input type="text" class="form-control" name="subject" id="subject"
-                                        placeholder="Asunto">
-                                </div>
-                                <div class="col-12">
-                                    <textarea name="message" class="form-control" id="message" cols="30" rows="4"
-                                        placeholder="Mensaje"></textarea>
-                                </div>
-                                <div class="col-12 text-center">
-                                    <button type="submit" class="btn studio-btn mt-3"><img
-                                            src="img/core-img/logo-icon.png" alt="">Enviar</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div> -->
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-10">
+            <div class="contact-heading-text text-center mb-100">
+              <span></span>
+              <h2>¡Hablemos!</h2>
+              <p>
+                Estamos acá para dar vida a tus ideas. Ya sea un evento, un
+                videoclip, una sesión de foto producto o un diseño gráfico, en
+                <strong>LUGAV</strong> trabajamos para transformar tus proyectos
+                en algo único. Contactanos y contanos qué necesitás; estamos
+                listos para brindarte soluciones multimediales adaptadas a tus
+                expectativas. Podés escribirnos por mail, instagram o llamarnos.
+                Juntos lograremos resultados increíbles y que superen tus
+                expectativas. ¡Hablemos!
+              </p>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Google Maps -->
     <div class="map-area">
-        <div class="container">
-            <div class="row justify-content-end">
-                <div class="col-10">
-                    <!-- <div id="googleMap"> -->
-                        <iframe
-                            id="googleMap"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16877.541816878158!2d-61.19771610294568!3d-27.21707433561121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94475b9fc5c2deb5%3A0x43f95408d02e488a!2sCharata%2C%20Chaco!5e0!3m2!1ses-419!2sar!4v1738045589655!5m2!1ses-419!2sar"
-                            width="850" 
-                            height="450" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                            class="shadow-md"
-                        ></iframe>
-                    <!-- </div> -->
-                    <!-- Contact Info -->
-                    <div class="contact-core-info d-flex align-items-center justify-content-center wow fadeInLeftBig" data-wow-delay="1s"
-                        data-wow-duration="1000ms">
-                        <div class="contactInfo d-flex flex-column ">
-                            <img src="img/core-img/logo.png" alt="" style="max-width: 120px; margin: 0 auto; margin-bottom: 1rem;">
-                            <!-- Single Footer Content -->
-                            <div class="single-footer-content">
-                                <img src="img/core-img/smartphone.png" alt="">
-                                <a href="#">+54 9 373 15-44056</a>
-                            </div>
-                            <!-- Single Footer Content -->
-                            <div class="single-footer-content">
-                                <img src="img/core-img/envelope-2.png" alt="">
-                                <a href="#">lucas.gonzalez.audiovisual<br>@gmail.com</a>
-                            </div>
-                        </div>
-                    </div>
+      <div class="container">
+        <div class="row justify-content-end">
+          <div class="col-10">
+            <!-- <div id="googleMap"> -->
+            <iframe
+              id="googleMap"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16877.541816878158!2d-61.19771610294568!3d-27.21707433561121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94475b9fc5c2deb5%3A0x43f95408d02e488a!2sCharata%2C%20Chaco!5e0!3m2!1ses-419!2sar!4v1738045589655!5m2!1ses-419!2sar"
+              width="850"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="shadow-md"
+            ></iframe>
+            <!-- </div> -->
+            <!-- Contact Info -->
+            <div
+              class="contact-core-info d-flex align-items-center justify-content-center wow fadeInLeftBig"
+              data-wow-delay="1s"
+              data-wow-duration="1000ms"
+            >
+              <div class="contactInfo d-flex flex-column">
+                <img
+                  src="img/core-img/logo.png"
+                  alt=""
+                  style="max-width: 120px; margin: 0 auto; margin-bottom: 1rem"
+                />
+                <!-- Single Footer Content -->
+                <div class="single-footer-content">
+                  <i
+                    class="fa fa-phone"
+                    style="font-size: 20px; color: #666; margin-right: 4px"
+                  ></i>
+                  <a href="#">+54 9 373 15-44056</a>
                 </div>
+                <!-- Single Footer Content -->
+                <div class="single-footer-content">
+                  <i
+                    class="fa fa-envelope"
+                    style="font-size: 20px; color: #666; margin-right: 8px"
+                  ></i>
+                  <a href="#">lucas.gonzalez.audiovisual<br />@gmail.com</a>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
 
-    <!-- Follow Me Instagram Area Start -->
-    <section class="follow-me-instagram-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-11 ml-auto">
-                    <div class="follow-me-title">
-                        <h5>Follow me @ Instagram</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Instagram Feeds Area -->
-        <div class="instagram-feeds-area owl-carousel">
-            <div class="single-instagram-feeds">
-                <img src="img/bg-img/i1.jpg" alt="">
-                <a href="https://www.instagram.com/lugavv" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            </div>
-            <div class="single-instagram-feeds">
-                <img src="img/bg-img/i2.jpg" alt="">
-                <a href="https://www.instagram.com/lugavv" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            </div>
-            <div class="single-instagram-feeds">
-                <img src="img/bg-img/i3.jpg" alt="">
-                <a href="https://www.instagram.com/lugavv" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            </div>
-            <div class="single-instagram-feeds">
-                <img src="img/bg-img/i4.jpg" alt="">
-                <a href="https://www.instagram.com/lugavv" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            </div>
-            <div class="single-instagram-feeds">
-                <img src="img/bg-img/i5.jpg" alt="">
-                <a href="https://www.instagram.com/lugavv" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            </div>
-            <div class="single-instagram-feeds">
-                <img src="img/bg-img/i6.jpg" alt="">
-                <a href="https://www.instagram.com/lugavv" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            </div>
-            <div class="single-instagram-feeds">
-                <img src="img/bg-img/i7.jpg" alt="">
-                <a href="https://www.instagram.com/lugavv" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            </div>
-        </div>
-    </section>
-    <!-- Follow Me Instagram Area End -->
+    <!-- Instagram Section Component -->
+    <div data-component="instagram-section"></div>
 
     <!-- Footer Area Start -->
-    <footer class="footer-area">
-        <div class="container-fluid h-100">
-            <div class="row h-100">
-                <div class="col-12 h-100">
-                    <div class="footer-content h-100 d-md-flex align-items-center justify-content-between">
-                        <!-- Single Footer Content -->
-                        <div class="single-footer-content">
-                            <img src="img/core-img/smartphone.png" alt="">
-                            <a href="#">+54 9 373 15-44056</a>
-                        </div>
-                        <!-- Single Footer Content -->
-                        <div class="single-footer-content">
-                            <img src="img/core-img/envelope-2.png" alt="">
-                            <a href="#">lucas.gonzalez.audiovisual@gmail.com</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Area End -->
+    <div data-component="footer"></div>
 
     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
     <!-- <p>Copyright &copy;
@@ -251,6 +130,9 @@
             class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
     </p> -->
     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+    <!-- Components Loader (MUST load FIRST) -->
+    <script src="js/components-loader.js"></script>
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
@@ -265,8 +147,5 @@
     <!-- Google Maps -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwuyLRa1uKNtbgx6xAJVmWy-zADgegA2s"></script>
     <script src="js/map-active.js"></script>
-
-
-</body>
-
+  </body>
 </html>

@@ -1,25 +1,44 @@
-Thanks for downloading this theme!
+## LUGAV · Portafolio Audiovisual
 
-## Other Useful Links
+Sitio web Bootstrap en español para el portafolio de LUGAV. Utiliza un sistema de componentes HTML (`components/`) cargados mediante `js/components-loader.js`, galerías filtrables e iframes de YouTube para mostrar videos recientes.
 
-**ThemeWagon** is a great source for downloading free HTML templates built with the latest technology.
+### Requisitos básicos
 
-To download free templates, follow this link: https://themewagon.com/theme_tag/free/
+- Navegador moderno con soporte para Fetch API.
+- Servir el proyecto a través de HTTP/HTTPS (no abrir los HTML con `file://`).
 
-Besides that, you can buy our premium templates for making your web development experience unforgettable.
+### ¿Por qué necesito un servidor local?
 
-Visit the store from here: https://themewagon.com/theme-categories/premium-templates/
+1. **Componentes reutilizables**: `components-loader.js` usa `fetch()` para inyectar `header`, `footer` y `preloader`. Los navegadores bloquean esas solicitudes cuando la página se abre directamente desde el sistema de archivos, por lo que los componentes no aparecerán.
+2. **Videos de YouTube**: algunos videos requieren que YouTube reciba el encabezado `Referer` o el parámetro `origin`. Si cargas la página con `file://`, ese dato no existe y el iframe responde con el error **153 – PLAYABILITY_ERROR_CODE_EMBEDDER_IDENTITY_MISSING_REFERRER** (“El video no está disponible”). Servir la web con HTTP soluciona el problema.
 
-Alternatively, here's our top most trending and selling items:
+### Cómo ejecutar el proyecto localmente
 
-* [**Sparrow**](https://themewagon.com/themes/sparrow/) - A multipurpose template made with Bootstrap 4.1 and world's finest animation.
-* [**Posh**](https://themewagon.com/themes/posh-html5-bootstrap-4-template/) - Bootstrap 4 template with a myriad number of ready-to-deploy sections. 
-* [**Elixir**](https://themewagon.com/themes/elixir-elegant-html5-bootstrap-template-consultancy-agency-website/) - Bootstrap 4 agency template. Best for smooth animated scrolling. 
-* [**Freya**](https://themewagon.com/themes/bootstrap-4-premium-interior-design-template-freya/) - Interior design template made with Bootstrap 4. 
-* [**Reign Pro**](https://themewagon.com/themes/reign-pro-premium-corporate-agency-html5-template/) - A corporate template with a visually unique design scheme. 
-* [**Boots4**](https://themewagon.com/themes/first-ever-bootstrap-4-template/) - One of the first Bootstrap 4 templates ever made on earth. 
-* [**Hideaway**](https://themewagon.com/themes/hideaway/) - A template for resorts. Built with Bootstrap 4. 
-* [**Baikal**](https://themewagon.com/themes/bootstrap-4-startup-small-business-website-template/) - A smart Bootstrap template for start-up. 
-* [**Mega Discount**](https://themewagon.com/themes/mega-discount-bundle/) - A bundle of 26 HTML5 templates; best value for your money. 
+En la raíz del proyecto ejecuta uno de los siguientes comandos:
+
+```bash
+# Python 3
+python -m http.server 8000
+
+# o Node.js
+npx http-server
+```
+
+Luego visita `http://localhost:8000/portfolio.html` (o la página que necesites) para obtener la experiencia completa.
+
+### Estructura rápida
+
+- `components/`: encabezado, pie y preloader reutilizables.
+- `img/350` y `img/1280`: versiones en baja y alta resolución para la galería.
+- `js/video-control.js`: controla la expansión de videos y ahora añade el parámetro `origin` a los iframes cuando es posible.
+
+### Problemas conocidos
+
+- Si aún ves “El video no está disponible”, verifica que el servidor se ejecute bajo `http://` u `https://` y que no haya extensiones bloqueando el encabezado `Referer`.
+- Recuerda limpiar caché después de actualizar imágenes o componentes.
+
+### Producción
+
+Sube el contenido a cualquier hosting estático (Netlify, Vercel, GitHub Pages, etc.) para garantizar que YouTube reconozca el dominio y que los componentes se carguen correctamente.
 
 

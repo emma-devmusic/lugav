@@ -8,3 +8,64 @@
     ---------------------------------------------------------- */
 
     /* ============ PLACE YOUR CUSTOM CSS HERE ============ */
+
+    /* Fix para Magnific Popup en móviles - Bloquear scroll del body */
+    .mfp-no-scroll {
+        overflow: hidden !important;
+        position: fixed !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    /* Mejoras adicionales para Magnific Popup en móvil */
+    @media screen and (max-width: 768px) {
+        .mfp-container {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+
+        .mfp-img-mobile .mfp-figure:after {
+            top: 0 !important;
+            bottom: 0 !important;
+        }
+
+        .mfp-img-mobile .mfp-close {
+            background: rgba(0, 0, 0, 0.8) !important;
+            color: white !important;
+            font-size: 24px !important;
+            top: 10px !important;
+            right: 10px !important;
+            width: 40px !important;
+            height: 40px !important;
+            line-height: 40px !important;
+            border-radius: 50% !important;
+        }
+    }
+
+    /* Estilos personalizados para todas las barras de desplazamiento */
+
+    /* Para navegadores WebKit (Chrome, Safari, Edge) */
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f2f4f8;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #838383;
+        border-radius: 10px;
+        transition: background 0.3s ease;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #1d1d1d;
+    }
+
+    /* Para Firefox */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: #838383 #f2f4f8;
+    }

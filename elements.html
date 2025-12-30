@@ -13,6 +13,9 @@
 
     <!-- Favicon  -->
     <link rel="icon" href="img/core-img/favicon.ico">
+    
+    <!-- Preloader Critical CSS -->
+    <link rel="stylesheet" href="css/preloader-critical.css">
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="css/core-style.css">
@@ -24,26 +27,17 @@
 </head>
 
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="showbox">
-            <div class="loader">
-                <svg class="circular" viewBox="25 25 50 50">
-                    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-                </svg>
-            </div>
-        </div>
-        <div class="questions-area text-center">
-            <p>Did you know?</p>
-            <ul>
-                <li>The largest photography competition is 353,768 entries.</li>
-                <li>Photography is the toughest profession in the world.</li>
-                <li>The world’s largest photo album by dimensions was 13 ft 11.5 in x 17 ft.</li>
-                <li>The world’s largest photo mosaic featured 176,175 pictures.</li>
-                <li>The world’s largest camera lens was a 5200mm lens attached to a canon.</li>
-            </ul>
+    <!-- Initial Preloader (shown immediately) -->
+    <div id="initial-preloader">
+        <div class="initial-loader">
+            <div class="spinner"></div>
+            <p style="color: #666; margin: 0;">Cargando...</p>
         </div>
     </div>
+
+    <!-- Preloader Component -->
+    <div data-component="preloader"></div>
+
 
     <!-- Gradient Background Overlay -->
     <div class="gradient-background-overlay"></div>

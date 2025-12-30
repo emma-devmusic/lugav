@@ -45,39 +45,51 @@
     $('[data-toggle="tooltip"]').tooltip()
 
     // Nicescroll Active Code
-    $("body, .gallery_area").niceScroll({
-        cursorcolor: "#717171",
-        cursorwidth: "5px",
-        background: "#f0f0f0"
+    // $("body, .gallery_area").niceScroll({
+    //     cursorcolor: "#717171",
+    //     cursorwidth: "5px",
+    //     background: "#f0f0f0"
+    // });
+
+    // Instagram Feeds Slider - Inicializar después de cargar componentes
+    function initInstagramCarousel() {
+        if ($.fn.owlCarousel) {
+            $('.instagram-feeds-area').owlCarousel({
+                items: 7,
+                margin: 0,
+                loop: true,
+                nav: false,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                smartSpeed: 1000,
+                responsive: {
+                    0: {
+                        items: 3
+                    },
+                    768: {
+                        items: 4
+                    },
+                    992: {
+                        items: 5
+                    },
+                    1280: {
+                        items: 7
+                    }
+                }
+            });
+        }
+    }
+
+    // Ejecutar cuando los componentes estén listos
+    $(document).on('componentsLoaded', function() {
+        initInstagramCarousel();
     });
 
-    // Instagram Feeds Slider
-    if ($.fn.owlCarousel) {
-        $('.instagram-feeds-area').owlCarousel({
-            items: 7,
-            margin: 0,
-            loop: true,
-            nav: false,
-            dots: false,
-            autoplay: true,
-            autoplayTimeout: 5000,
-            smartSpeed: 1000,
-            responsive: {
-                0: {
-                    items: 3
-                },
-                768: {
-                    items: 4
-                },
-                992: {
-                    items: 5
-                },
-                1280: {
-                    items: 7
-                }
-            }
-        });
-    }
+    // Fallback para páginas sin componentes
+    $(document).ready(function() {
+        setTimeout(initInstagramCarousel, 100);
+    });
 
     // Search Btn Active Code
     $('#searchbtn').on('click', function () {
@@ -98,6 +110,22 @@
             type: 'image',
             removalDelay: 300,
             mainClass: 'mfp-fade',
+            fixedContentPos: true,
+            fixedBgPos: true,
+            overflowY: 'hidden',
+            closeOnContentClick: true,
+            closeOnBgClick: true,
+            closeBtnInside: false,
+            callbacks: {
+                open: function() {
+                    // Bloquear scroll del body en móvil
+                    $('body').addClass('mfp-no-scroll');
+                },
+                close: function() {
+                    // Restaurar scroll del body
+                    $('body').removeClass('mfp-no-scroll');
+                }
+            },
             gallery: {
                 enabled: true,
                 preload: [0, 2],
