@@ -74,6 +74,7 @@
         if (currentPage !== 'index') {
             header.classList.add('bg-img');
             header.style.backgroundImage = 'url(img/bg-img/14.jpg)';
+            header.style.height = '75px';
         }
     }
 
