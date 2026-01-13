@@ -820,16 +820,12 @@ img {
 /* :: 10.0 Portfolio Area CSS */
 
 .gallery_area {
-    height: calc(100% - 380px);
-    /* width: calc(100% - 245px); */
+    height: calc(100% - 280px);
     width: 100%;
     overflow-y: scroll;
     position: fixed;
     z-index: 1;
-    top: 200px;
-    /* left: 185px;
-    right: 60px; */
-    /* padding-right: 45px; */
+    top: 170px;
     margin-inline: auto;
 }
 

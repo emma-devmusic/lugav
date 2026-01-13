@@ -10,11 +10,8 @@
         left: -160px;
     }
     .gallery_area {
-        height: calc(100% - 380px);
-        width: calc(100% - 180px);
-        left: 120px;
-        right: 60px;
-        padding-right: 45px;
+        height: calc(100% - 280px);
+        width: 100%;
     }
     .social-sidebar-area {
         height: 65%;
@@ -95,11 +92,8 @@
         font-size: 60px;
     }
     .gallery_area {
-        height: calc(100% - 380px);
-        width: calc(100% - 130px);
-        left: 100px;
-        right: 30px;
-        padding-right: 30px;
+        height: calc(100% - 280px);
+        width: 100%;
     }
     .portfolio-menu button {
         padding: 0 10px;
