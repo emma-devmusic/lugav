@@ -105,10 +105,11 @@
 
       // Bloquear scroll del body
       $('body').addClass('mfp-no-scroll');
+      $('body').css('position', 'relative');
 
       // Crear overlay de fondo si no existe
       if ($('#video-overlay').length === 0) {
-        $('body').append('<div id="video-overlay" class="video-overlay"></div>');
+        // $('body').append('<div id="video-overlay" class="video-overlay"></div>');
       }
       $('#video-overlay').show();
 
@@ -125,7 +126,8 @@
         width: "90vw",
         "max-width": "900px",
         height: "auto",
-        "box-shadow": "0 10px 30px rgba(0,0,0,0.5)"
+        "box-shadow": "0 10px 30px rgba(0,0,0,0.5)",
+        zIndex: "99999",
       });
 
       $container.find(".video-iframe").css({
@@ -189,7 +191,7 @@
   });
 
   // TOUCH/Clic directo sobre el contenedor del video (expansión inmediata)
-  $(".video-container").on("click touchstart", function (e) {
+  $(".video-container").on("click touch", function (e) {
     if (!videoExpanded) {
       e.stopPropagation();
       expandVideo($(this));
