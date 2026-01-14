@@ -1,28 +1,36 @@
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+
     .social-sidebar-area,
-    .message-box > a {
+    .message-box>a {
         width: 80px;
     }
-    .message-box > a {
+
+    .message-box>a {
         height: 80px;
     }
+
     .social-info-area {
         left: -160px;
     }
+
     .gallery_area {
         height: calc(100% - 280px);
         width: 100%;
     }
+
     .social-sidebar-area {
         height: 65%;
     }
+
     .social-info-area {
         left: -25px;
         bottom: 190px;
     }
-    .social-info-area > a > span {
+
+    .social-info-area>a>span {
         display: none;
     }
+
     .social-info-area a i {
         font-size: 14px;
         margin-right: 10px;
@@ -33,6 +41,7 @@
     .navbar {
         padding: 0;
     }
+
     .navbar-toggler {
         padding: 0;
         font-size: 20px;
@@ -43,70 +52,125 @@
         height: 35px;
         color: #fff;
         line-height: 28px;
-        margin: 38px 0;
         border: 2px solid #fff;
         font-weight: 400;
     }
+
     #studioMenu {
         padding: 30px;
         background-color: #1d1d1d;
         z-index: 1002;
     }
+
     .header-area .main-menu .nav-link {
         padding: 5px 15px;
     }
+
     .header-search-form form input {
         width: 570px;
         margin-bottom: 15px;
     }
+
     .social-sidebar-area,
-    .message-box > a {
+    .message-box>a {
         width: 80px;
     }
-    .message-box > a {
+
+    .message-box>a {
         height: 80px;
     }
+
     .social-sidebar-area {
         bottom: 50px;
         height: 70%;
     }
+
     .social-info-area {
         left: -25px;
         bottom: 190px;
     }
-    .social-info-area > a > span {
+
+    .social-info-area>a>span {
         display: none;
     }
+
     .social-info-area a i {
         font-size: 14px;
         margin-right: 10px;
     }
+
     .slide-text {
         margin-left: 120px;
         margin-top: -50px;
     }
+
+    .slide-text h2 {
+        font-size: 25px;
+        margin-bottom: 5px;
+    }
+
     .carousel-indicators li {
         height: 50px;
     }
+
     .slide-text span {
         font-size: 60px;
     }
+
     .gallery_area {
         height: calc(100% - 280px);
         width: 100%;
     }
+
     .portfolio-menu button {
         padding: 0 10px;
     }
+
     .counter-area h2 {
         font-size: 24px;
     }
+
     .counter-area h6 {
         font-size: 12px;
     }
+
     .elements-title h2 {
         font-size: 24px;
         margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .slide-text {
+        display: flex;
+        gap: 5px;
+        align-items: end;
+    }
+
+    .slide-text h2 {
+        margin-bottom: 4px;
+    }
+
+    .slide-text span {
+        font-size: 40px !important;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .slide-text {
+        margin-left: 20px !important;
+        display: flex;
+        gap: 5px;
+        align-items: end;
+    }
+
+    .slide-text h2 {
+        font-size: 15px;
+        margin-bottom: 4px;
+    }
+
+    .slide-text span {
+        font-size: 36px !important;
     }
 }
 
@@ -114,9 +178,11 @@
     p {
         font-size: 14px;
     }
+
     .navbar {
         padding: 0;
     }
+
     .navbar-toggler {
         padding: 0;
         font-size: 16px;
@@ -130,92 +196,116 @@
         border: 2px solid #fff;
         font-weight: 400;
     }
+
     #studioMenu {
         padding: 20px;
         background-color: #1d1d1d;
         z-index: 1002;
     }
+
     .header-area .main-menu .nav-link {
         padding: 5px 15px;
     }
+
     .header-search-form form input {
         width: 570px;
         margin-bottom: 15px;
     }
+
     .header-area {
         height: 70px;
         padding: 0 0;
     }
+
     .navbar-brand {
         margin-right: 0;
         max-width: 100px;
     }
+
     .header-search-form form input {
         width: 100%;
         margin-bottom: 15px;
         font-size: 10px;
     }
+
     .social-sidebar-area,
-    .message-box > a {
+    .message-box>a {
         width: 50px;
     }
-    .message-box > a {
+
+    .message-box>a {
         height: 50px;
     }
+
     .social-sidebar-area {
         bottom: 40px;
     }
+
     .carousel-indicators li {
         height: 40px;
     }
+
     .social-info-area {
         left: -27px;
         bottom: 130px;
     }
-    .social-info-area > a > span {
+
+    .social-info-area>a>span {
         display: none;
     }
+
     .gradient-background-overlay,
     .gradient-background-overlay:before {
         height: 90px;
     }
+
     .slide-text {
         padding: 15px 15px 10px;
         margin-left: 65px;
         margin-top: -40px;
     }
+
     .slide-text span {
         font-size: 24px;
     }
+
     .slide-text h2 {
         font-size: 16px;
     }
+
     .contact-popup-form .modal-content {
         padding: 15px;
     }
+
     .blog-content h2,
     .contact-heading-text h2 {
         font-size: 20px;
     }
+
     .contact-heading-text h2,
     .blog-content p {
         margin-bottom: 30px;
     }
+
     .modal-dialog {
         width: 240px;
         margin: 30px auto;
     }
+
     .about-content h2 {
         margin-bottom: 30px;
         font-size: 20px;
     }
+
     .single-pie-bar {
         margin-bottom: 50px;
     }
+
     .follow-me-instagram-area {
         border-top: 1px solid #dcdcdc;
         margin-bottom: 0;
     }
+
     .footer-area {
         position: relative;
         height: auto;
@@ -223,12 +313,14 @@
         bottom: 0;
         left: 0;
     }
+
     .single-footer-content {
         margin-bottom: 15px;
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
     }
+
     .gallery_area {
         height: auto;
         /* width: calc(100% - 90px); */
@@ -240,49 +332,62 @@
         top: 100px;
         padding-bottom: 6rem;
     }
+
     .portfolio-menu button {
         font-size: 12px;
         padding: 0 5px;
     }
+
     .gallery_menu {
         margin-bottom: 30px;
     }
+
     #scrollUp {
         display: none !important;
     }
+
     .page-item.active .page-link:after {
         width: 40px;
     }
+
     .page-item.active .page-link {
         padding-right: 40px;
     }
+
     .pagination-area .page-link {
         font-size: 14px;
     }
+
     .pagination-area.mb-100 {
         margin-bottom: 0;
     }
+
     .blog-area.mt-100,
     .about-me-area.mt-100,
     .contact-area.mt-100 {
         margin-top: 70px;
     }
+
     .contact-core-info {
         width: 200px;
         left: -40px;
         padding: 15px;
     }
+
     .single-cool-fact {
         margin-bottom: 30px;
     }
+
     .elements-title h2 {
         font-size: 20px;
         margin-bottom: 30px;
     }
+
     .studio-buttons-area .btn {
         margin-bottom: 15px;
     }
-    .message-box > a > img {
+
+    .message-box>a>img {
         max-width: 30px;
     }
 }
@@ -297,18 +402,30 @@
     #scrollUp {
         display: block !important;
     }
-    .slide-text span {
-        font-size: 36px;
+
+    .slide-text {
+        display: flex;
+        gap: 5px;
+        align-items: end;
     }
+
+    .slide-text span {
+        font-size: 40px;
+    }
+
     .slide-text h2 {
+        margin-bottom: 4px;
         font-size: 20px;
     }
+
     .modal-dialog {
         width: 450px;
     }
+
     .contact-popup-form .modal-content {
         padding: 50px 15px;
     }
+
     .portfolio-menu button {
         font-size: 14px;
     }
